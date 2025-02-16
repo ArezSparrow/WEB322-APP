@@ -16,12 +16,12 @@ const storeService = require("./store-service");
 const path = require('path');
 const app = express(); 
 
-app.use(express.static('public')); 
+app.use(express.static(__dirname + '/public'));
 
 const HTTP_PORT = process.env.PORT || 8080;
 
   app.get("/", (req, res) => {
-    res.redirect(path.join(__dirname, '/views/about.html'));
+    res.redirect("/about");
   });
 
   app.get('/about', (req, res) => {
